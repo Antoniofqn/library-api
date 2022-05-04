@@ -58,7 +58,7 @@ I like that despite it being my first API-only Rails app it works as intended. A
 
 Read Me - Portuguese version
 
-#Introdução
+# Introdução
 
 Esta é uma API de biblioteca pessoal simples. Foi criado como parte de um desafio técnico para uma vaga de emprego. Nele, você pode criar um usuário (com e-mail, senha e nome) que por sua vez pode criar instâncias do livro. Nesses casos, você pode registrar o título (como "título"), autor (como "autor"), gênero (como "gênero"), se foi lido ou não (como "lido") e em caso de sim , dê sua classificação (como "nota") e resenha (como "revisão").
 Cada usuário pode ver apenas os livros que criou.
