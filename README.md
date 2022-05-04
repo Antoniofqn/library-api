@@ -84,6 +84,12 @@ POST	/api/v1/livros - Registrar novo livro -	Instruções: Mandar headers X-User
 
 GET	/api/v1/search - Search -	Mandar headers X-User-Email e X-User-Token. Query params: título OU autor OU gênero
 
+## Quais são algumas das decisões de design que você tomou?
+
+A autorização do usuário foi feita com Pundit. Como este aplicativo deve servir como uma biblioteca pessoal, os usuários podem ver apenas seus próprios livros. Isso foi feito por meio de policy scopes.
+
+Para pesquisar, usei uma gem chamada search_pg. Ele pode ser programado posteriormente para oferecer uma experiência de pesquisa melhor do que é agora (mais sobre isso mais tarde).
+
 ## O que você gosta na sua implementação?
 
 Eu gosto que, apesar de ser meu primeiro aplicativo Rails API-only, ele funciona como pretendido. Todas as funcionalidades solicitadas estão presentes e a autorização do token funciona como uma API normal.
