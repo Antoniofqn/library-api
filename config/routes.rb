@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :livros, only: [ :index, :show, :create ]
+      resources :search, only: [:index]
     end
   end
   root to: 'pages#home'
