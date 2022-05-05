@@ -1,2 +1,33 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <h1>Introduction</h1>
+  <p>This is a simple personal library API. It was created as part of a technical challenge for a job opening.
+  In it, you can create an user (with email, password and name) which in turn can create book instances.
+  In these instances, you can register the title (as "título"), author (as "autor"), genre (as "gênero"), if it was read or no (as "lido") and in case of a yes, give your rating (as "nota") and review (as "review"). Each user can only see the books they've created.
+  </p>
+
+  <p>
+    The user has the following options to see his books:
+
+    He can list all books
+    He can see individual books
+    He can search books by title, author or genre
+  </p>
+
+  <h1>How to Use</h1>
+
+  Communication with the app is done via json requests. The following requests are available:
+
+  <ul>
+    <li>POST /users - User creation - instructions: Send request as { "user": { "email": "example@email.com", "name": "example name", "password": "example", "password_confirmation": "example" } } - It will return a JSON with the new User authentication token.</li>
+
+    <li>DELETE /users/sign_out - Exit user session - Can send request without header or body, it will return 204 No Content.</li>
+
+    <li>POST /users/sign_in - Enter a session with an existing User. - Instructions: send body with {"user": {"email": "$user_email", "password": "$user_password"}} - It will return a JSON with the user info and token.</li>
+
+    <li>GET /api/v1/livros - List all User books - Instructions: Send headers X-User-Email and X-User-Token</li>
+
+    <li>POST /api/v1/livros - Register new book - Instructions: Send headers X-User-Email and X-User-Token. Body: { "livro": {"título": "", "autor": ", "gênero": "", "lido": false (case true, send "nota" (from 0 to 5) and "review"}}</li>
+
+    <li>GET /api/v1/search - Search - Send headers X-User-Email and X-User-Token. Query params: título OR autor OR gênero</li>
+  </ul>
+</div>
